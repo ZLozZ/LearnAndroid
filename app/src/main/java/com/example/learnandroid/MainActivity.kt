@@ -2,6 +2,7 @@ package com.example.learnandroid
 
 import android.app.Dialog
 import android.content.ContentValues
+import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
@@ -23,7 +24,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var data: SQLiteDatabase
     private lateinit var rs: Cursor
-    lateinit var adapter: SimpleCursorAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,7 +38,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnShow.setOnClickListener {
-
+            val intent = Intent(this, ShowAuthorList::class.java)
+            startActivity(intent)
         }
 
         btnManager.setOnClickListener {
