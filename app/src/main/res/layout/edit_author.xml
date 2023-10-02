@@ -36,7 +36,7 @@
                 android:textSize="20dp"></TextView>
 
             <EditText
-                android:id="@+id/editDialogCode"
+                android:id="@+id/editCodeUpCode"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="47dp"
@@ -63,7 +63,7 @@
                 android:textSize="20dp"></TextView>
 
             <EditText
-                android:id="@+id/editDialogUpdate"
+                android:id="@+id/editNameUpdate"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="47dp"
