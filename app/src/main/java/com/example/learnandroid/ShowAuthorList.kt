@@ -13,6 +13,7 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatEditText
 
@@ -22,7 +23,7 @@ class ShowAuthorList : AppCompatActivity() {
     private var arrAuthor: MutableList<InforData> = mutableListOf()
 
     private lateinit var data: SQLiteDatabase
-
+    lateinit var rs:Cursor
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.show_list)
@@ -35,24 +36,36 @@ class ShowAuthorList : AppCompatActivity() {
         listAuthor.setOnItemClickListener { _, _, position, _ ->
             showUpdateAlbumDialog(position)
         }
-//        listAuthor.setOnItemLongClickListener { adapterView, view, i, l ->
-//            val builder = AlertDialog.Builder(this)
-//            val album = AlbumManager.listAlbum[i]
-//            builder.setMessage("Bạn muốn xoá album ${album.name}?")
-//                .setPositiveButton("Xoá") { _, _ ->
-//
-//                    AlbumManager.removeAlbum(album)
-//                    // Xoá xong cập nhật lại list album
-//                    albumAdapter.notifyDataSetChanged()
-//
-//                }.setNegativeButton("Không") { dialog, _ ->
-//                    dialog.dismiss()
-//                }
-//            // Create the AlertDialog object and return it
-//            builder.create()
-//            builder.show()
-//            true
-//        }
+        listAuthor.setOnItemLongClickListener { adapterView, view, i, l ->
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Remove")
+            val message = "[${arrAuthor[i].field2}' - '${arrAuthor[i].field3}]]"
+            builder.setMessage("Bạn muốn xoá album ${message} hả?")
+                .setPositiveButton("Xoá") { _, _ ->
+                    data.delete("AUTHOR", "id=?", arrayOf(arrAuthor[i].field1.toString()))
+                    var helper = ManagerAuthor(applicationContext)
+                    data = helper.readableDatabase
+                    authorAdapter.notifyDataSetChanged()
+                    arrAuthor.clear()
+                    if(data!=null){
+                        val cursor: Cursor = data.query("AUTHOR", null, null, null, null, null, null)
+                        cursor.moveToFirst()
+                        while (!cursor.isAfterLast) {
+                            arrAuthor.add(InforData(cursor.getInt(0), cursor.getString(1), cursor.getString(2)))
+                            cursor.moveToNext()
+                        }
+                    }
+                    authorAdapter = CustomList(this@ShowAuthorList, arrAuthor)
+                    listAuthor.adapter = authorAdapter
+
+                }.setNegativeButton("Không") { dialog, _ ->
+                    dialog.dismiss()
+                }
+            // Create the AlertDialog object and return it
+            builder.create()
+            builder.show()
+            true
+        }
     }
 
     private fun addControls() {
