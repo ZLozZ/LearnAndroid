@@ -36,28 +36,16 @@ class ShowAuthorList : AppCompatActivity() {
         listAuthor.setOnItemClickListener { _, _, position, _ ->
             showUpdateAlbumDialog(position)
         }
-        listAuthor.setOnItemLongClickListener { adapterView, view, i, l ->
+        listAuthor.setOnItemLongClickListener { _, _, i, _ ->
             val builder = AlertDialog.Builder(this)
             builder.setTitle("Remove")
             val message = "[${arrAuthor[i].field2}' - '${arrAuthor[i].field3}]]"
-            builder.setMessage("Bạn muốn xoá album ${message} hả?")
+            builder.setMessage("Bạn muốn xoá album $message hả?")
                 .setPositiveButton("Xoá") { _, _ ->
                     data.delete("AUTHOR", "id=?", arrayOf(arrAuthor[i].field1.toString()))
-                    var helper = ManagerAuthor(applicationContext)
-                    data = helper.readableDatabase
-                    authorAdapter.notifyDataSetChanged()
-                    arrAuthor.clear()
-                    if(data!=null){
-                        val cursor: Cursor = data.query("AUTHOR", null, null, null, null, null, null)
-                        cursor.moveToFirst()
-                        while (!cursor.isAfterLast) {
-                            arrAuthor.add(InforData(cursor.getInt(0), cursor.getString(1), cursor.getString(2)))
-                            cursor.moveToNext()
-                        }
-                    }
-                    authorAdapter = CustomList(this@ShowAuthorList, arrAuthor)
-                    listAuthor.adapter = authorAdapter
 
+                    arrAuthor.removeAt(i)
+                    authorAdapter.notifyDataSetChanged()
                 }.setNegativeButton("Không") { dialog, _ ->
                     dialog.dismiss()
                 }
@@ -138,20 +126,9 @@ class ShowAuthorList : AppCompatActivity() {
             data.update("AUTHOR", cv, "id=?",
                 arrayOf(arrAuthor[position].field1.toString())
             )
-            var helper = ManagerAuthor(applicationContext)
-            data = helper.readableDatabase
+            arrAuthor[position].field2 = editDialogCode.text.toString()
+            arrAuthor[position].field3 = editDialogName.text.toString()
             authorAdapter.notifyDataSetChanged()
-            arrAuthor.clear()
-            if(data!=null){
-                val cursor: Cursor = data.query("AUTHOR", null, null, null, null, null, null)
-                cursor.moveToFirst()
-                while (!cursor.isAfterLast) {
-                    arrAuthor.add(InforData(cursor.getInt(0), cursor.getString(1), cursor.getString(2)))
-                    cursor.moveToNext()
-                }
-            }
-            authorAdapter = CustomList(this@ShowAuthorList, arrAuthor)
-            listAuthor.adapter = authorAdapter
             dialog.dismiss()
         }
         dialog.show()
