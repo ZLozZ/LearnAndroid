@@ -43,7 +43,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnManager.setOnClickListener {
-
+            val intent = Intent(this, AddBook::class.java)
+            startActivity(intent)
         }
 
     }
@@ -100,6 +101,7 @@ class MainActivity : AppCompatActivity() {
                 focusedEditText = editDialogCode as AppCompatEditText
             }
         }
+
 
         btnDialogClear.setOnClickListener {
             focusedEditText?.setText("")

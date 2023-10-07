@@ -13,6 +13,9 @@
         android:theme="@style/Theme.LearnAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".AddBook"
+            android:exported="false" />
+        <activity
             android:name=".ShowAuthorList"
             android:exported="false" />
         <activity

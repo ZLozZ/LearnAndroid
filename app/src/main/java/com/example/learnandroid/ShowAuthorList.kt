@@ -23,7 +23,7 @@ class ShowAuthorList : AppCompatActivity() {
     private var arrAuthor: MutableList<InforData> = mutableListOf()
 
     private lateinit var data: SQLiteDatabase
-    lateinit var rs:Cursor
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.show_list)

@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFCFC"
+    android:background="#D3CDCD"
     android:backgroundTint="#FFFBFB"
-    android:padding="10dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,14 +14,14 @@
         android:weightSum="5">
 
         <TextView
-            android:layout_width="113dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Tác giả:"></TextView>
 
         <Spinner
             android:id="@+id/spinnerSp"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="4"></Spinner>
     </LinearLayout>
@@ -33,37 +33,54 @@
         android:weightSum="5">
 
         <TextView
-            android:layout_width="92dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Tên sách:"></TextView>
 
         <EditText
             android:id="@+id/editName"
-            android:layout_width="328dp"
-            android:layout_height="wrap_content"></EditText>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4">
+        </EditText>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingBottom="20dp"
         android:weightSum="5">
 
         <TextView
-            android:layout_width="92dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Ngày XB:"></TextView>
+            android:text="Ngày XB:">
+        </TextView>
 
         <EditText
             android:id="@+id/editDate"
-            android:layout_width="328dp"
-            android:layout_height="wrap_content"></EditText>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.2">
+        </EditText>
+
+        <Button
+            android:id="@+id/btnDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:background="#AAA0A0"
+            android:backgroundTint="#E1DCDC"
+            android:textSize="23dp"
+            android:text="...">
+        </Button>
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnAddSong"
+        android:id="@+id/btnAddBook"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,9 +89,11 @@
         android:text="Thêm Sách"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="@color/black"></Button>
+        android:textColor="@color/black">
+    </Button>
 
     <LinearLayout
+        android:paddingTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -83,6 +102,7 @@
             android:id="@+id/listBook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:listSelector="@color/design_default_color_error"></ListView>
+            android:listSelector="#FF3333">
+        </ListView>
     </LinearLayout>
 </LinearLayout>
