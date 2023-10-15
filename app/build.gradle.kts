@@ -33,6 +33,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
+    buildToolsVersion = "33.0.0"
+    ndkVersion = ndkVersion
 }
 
 dependencies {
