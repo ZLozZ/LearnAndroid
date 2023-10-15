@@ -1,5 +1,6 @@
 package com.example.learnandroid
 
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,17 +25,16 @@ class MainActivity : AppCompatActivity() {
     private fun addEvents() {
         itemAdapter.onItemClick = { appName ->
             Toast.makeText(this, "$appName", Toast.LENGTH_SHORT).show()
-
         }
     }
 
     private fun addViews() {
-        val listApp = listOf(
-            App(androidx.constraintlayout.widget.R.drawable.abc_ab_share_pack_mtrl_alpha, "app1"),
-            App(com.google.android.material.R.drawable.ic_mtrl_checked_circle, "app2"),
-            App(androidx.constraintlayout.widget.R.drawable.abc_btn_radio_material, "app3"),
-            App(com.google.android.material.R.drawable.abc_edit_text_material, "app4"),
-        )
+        val packages = packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
+        val listApp = mutableListOf<App>()
+        packages.forEach { appInfo ->
+            println(appInfo.packageName)
+            listApp.add(App(R.drawable.ic_launcher_foreground, appInfo.packageName))
+        }
         binding.rvApp.layoutManager = GridLayoutManager(this, 3)
         itemAdapter = AppAdapter(listApp)
         binding.rvApp.adapter = itemAdapter

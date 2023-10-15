@@ -18,7 +18,7 @@ class AppAdapter(private val dataSet: List<App>) : RecyclerView.Adapter<ItemView
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.setDataItem(dataSet[position])
         holder.itemView.setOnClickListener {
-            onItemClick?.invoke(dataSet[position].name)
+            onItemClick?.invoke(dataSet[position].name ?: "")
         }
     }
 
