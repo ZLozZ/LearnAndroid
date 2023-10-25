@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="fff">#4BA26A</color>
+    <color name="bgRecycle">#BEE3CB</color>
+    <color name="grey">#F1F5F5</color>
 </resources>
