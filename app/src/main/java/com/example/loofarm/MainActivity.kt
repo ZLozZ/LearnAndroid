@@ -3,11 +3,13 @@ package com.example.loofarm
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.loofarm.databinding.ActivityMainBinding
+import com.example.loofarm.model.ManagerUser
+import com.example.loofarm.ui.LoginFragment
 
-class MainActivity : AppCompatActivity() {
-
+class MainActivity : AppCompatActivity(){
     private lateinit var binding: ActivityMainBinding
-    private val login = Login()
+    private val login = LoginFragment()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -16,17 +18,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         initControls()
-        initEvents()
     }
 
     private fun initControls() {
+        ManagerUser.createUser()
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.frLayout, login)
             commit()
         }
     }
 
-    private fun initEvents() {
-
-    }
 }

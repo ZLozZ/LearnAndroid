@@ -6,7 +6,7 @@
     android:padding="30dp"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".Login">
+    tools:context=".ui.LoginFragment">
 
     <LinearLayout
         android:layout_width="234dp"
@@ -33,15 +33,5 @@
         android:layout_height="80dp"
         android:background="@drawable/googlelogo">
     </Button>
-
-    <Button
-        android:id="@+id/btnLoginFb"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/ic_fb">
-    </Button>
-
 
 </LinearLayout>

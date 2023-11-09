@@ -1,22 +1,22 @@
-package com.example.loofarm
+package com.example.loofarm.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.loofarm.databinding.ItemFarmBinding
 
-class CustomAdapterRV(private val dataSet: List<String>): RecyclerView.Adapter<ItemViewRV>() {
+class FarmAdapter(private val dataSet: List<String>): RecyclerView.Adapter<ItemViewHolder>() {
 
-    private var onItemClick: ((String)->Unit)? = null
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewRV {
+    var onItemClick: ((Int)->Unit)? = null
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val view = ItemFarmBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ItemViewRV(view)
+        return ItemViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ItemViewRV, position: Int) {
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.setDataItem(dataSet[position])
         holder.itemView.setOnClickListener{
-            onItemClick?.invoke(dataSet[position])
+            onItemClick?.invoke(position)
         }
     }
 

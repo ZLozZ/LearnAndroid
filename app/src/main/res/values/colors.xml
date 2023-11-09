@@ -6,4 +6,6 @@
     <color name="bgRecycle">#BEE3CB</color>
     <color name="grey">#F1F5F5</color>
     <color name="text">#013220</color>
+    <color name="bgInfor">#F4F5F5</color>
+    <color name="btnExit">#D4d0c7</color>
 </resources>
