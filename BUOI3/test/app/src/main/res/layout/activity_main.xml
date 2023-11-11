@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/btncreatedatabase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Database" />
+
+    <Button
+        android:id="@+id/btndeletedatabase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Database" />
+
+    <Button
+        android:id="@+id/btncreatetable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Table" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btndeletetable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete Table" />
+
+        <EditText
+            android:id="@+id/editTableName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Type Table to delete" >
+
+            <requestFocus />
+        </EditText>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnInsertRowToTblLop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insert Row to tbllop" />
+
+    <Button
+        android:id="@+id/btndeleterowfromtbllop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Row From tbllop" />
+
+    <Button
+        android:id="@+id/btnupdaterowtotbllop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Row to tbllop" />
+
+    <Button
+        android:id="@+id/btnquerylop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Querying data tbllop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insert Student" />
+
+        <EditText
+            android:id="@+id/editmalop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Type malop to reference" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Querying Sinhvien by malop" />
+
+</LinearLayout>

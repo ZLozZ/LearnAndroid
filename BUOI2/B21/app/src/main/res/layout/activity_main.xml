@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#048519"
+        android:text="Chọn danh mục:"
+        android:textColor="@color/white">
+    </TextView>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#048519"
+            android:text="Chọn danh mục:"
+            android:textColor="@color/white">
+
+        </TextView>
+
+        <AutoCompleteTextView
+            android:id="@+id/autoText"
+            android:layout_width="222dp"
+            android:layout_height="wrap_content"
+            android:completionThreshold="1">
+
+        </AutoCompleteTextView>
+        <Button
+            android:id="@+id/btnInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nhập"
+            android:textSize="16dp"
+            android:textAllCaps="false">
+        </Button>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#048519"
+        android:text="Danh sách sản phẩm"
+        android:textColor="@color/white">
+    </TextView>
+    <GridView
+        android:id="@+id/Gd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="3">
+    </GridView>
+
+</LinearLayout>

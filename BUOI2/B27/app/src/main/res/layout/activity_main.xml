@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#076C04"
+        android:text="Quản lý Album"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textAlignment="center">
+
+    </TextView>
+    <Button
+        android:id="@+id/btnAddAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CAC9C9"
+        android:text="Thêm Album"
+        android:textColor="@color/black"
+        android:textAllCaps="false">
+
+    </Button>
+
+    <Button
+        android:id="@+id/btnShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CAC9C9"
+        android:text="Xem danh sách Album"
+        android:textColor="@color/black"
+        android:textAllCaps="false"></Button>
+
+    <Button
+        android:id="@+id/btnManage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CAC9C9"
+        android:text="Quản lý bài hát"
+        android:textColor="@color/black"
+        android:textAllCaps="false"></Button>
+</LinearLayout>

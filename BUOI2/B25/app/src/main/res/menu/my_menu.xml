@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/finish"
+        android:title="Công việc đã hoàn thành"></item>
+    <item
+        android:id="@+id/unfinish"
+        android:title="Công việc chưa hoàn thành"></item>
+    <item
+        android:id="@+id/allDelete"
+        android:title="Xóa toàn bộ công việc"></item>
+</menu>

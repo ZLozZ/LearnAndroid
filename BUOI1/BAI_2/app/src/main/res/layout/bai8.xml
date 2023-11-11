@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#087E27"
+        android:text="Các kiểu lập trình sự kiện"
+        android:textAlignment="center"
+        android:textColor="#F6F6F6"
+        android:textSize="20sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/texta"
+            android:layout_width="99dp"
+            android:layout_height="38dp"
+            android:paddingTop="7dp"
+            android:text="Số a:"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            tools:ignore="DuplicateIds" />
+
+        <EditText
+            android:id="@+id/soa"
+            android:layout_width="269dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:ems="10"
+            android:inputType="text"
+            tools:ignore="DuplicateIds" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/sob"
+            android:layout_width="268dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:ems="10"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="99dp"
+            android:layout_height="38dp"
+            android:paddingTop="7dp"
+            android:text="Số b:"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#087E27"
+        android:textAlignment="center"
+        android:textColor="#F6F6F6"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/BtnSum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tổng 2 số"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:onClick="HandleSum"/>
+
+    <Button
+        android:id="@+id/sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hiệu 2 số"
+        android:textAllCaps="false"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/mul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tích 2 số"
+        android:textAllCaps="false"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/div"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thương 2 số"
+        android:textAllCaps="false"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="thoát chương trình"
+        android:textSize="20sp"
+        />
+
+</LinearLayout>

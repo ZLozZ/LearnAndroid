@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#040303"
+    android:backgroundTint="#100A0A"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textResult"
+        android:layout_width="match_parent"
+        android:layout_height="138dp"
+        android:background="#000000"
+        android:contextClickable="false"
+        android:gravity="bottom|right"
+        android:textColor="@color/white"
+        android:textSize="34sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="91dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="215dp"
+            android:layout_height="match_parent"
+            android:background="#3E3B3B" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="148dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="#3E3B3B"
+            android:text="Delete"
+            android:textColor="#DFCDCD"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/div"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="0dp"
+            android:backgroundTint="#676666"
+            android:text="÷"
+            android:textColor="#F6F6F6"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/so8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_toRightOf="@id/so7"
+            android:backgroundTint="#676666"
+            android:text="8"
+            android:textColor="#F4F4F4"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/so7"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:backgroundTint="#676666"
+            android:text="7"
+            android:textColor="#FAEDED"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/so9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0dp"
+            android:layout_toLeftOf="@id/div"
+            android:backgroundTint="#676666"
+            android:text="9"
+            android:textColor="#FFFFFF"
+            android:textSize="48sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/mul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="#676666"
+            android:text="×"
+            android:textColor="#F6F6F6"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/so5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_toRightOf="@id/so4"
+            android:backgroundTint="#676666"
+            android:text="5"
+            android:textColor="#F4F4F4"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/so4"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:backgroundTint="#676666"
+            android:text="4"
+            android:textColor="#FAEDED"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/so6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/mul"
+            android:backgroundTint="#676666"
+            android:text="6"
+            android:textColor="#FFFFFF"
+            android:textSize="48sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="#676666"
+            android:text="-"
+            android:textColor="#F6F6F6"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/so2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_toRightOf="@id/so1"
+            android:backgroundTint="#676666"
+            android:text="2"
+            android:textColor="#F4F4F4"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/so1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:backgroundTint="#676666"
+            android:text="1"
+            android:textColor="#FAEDED"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/so3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/sub"
+            android:backgroundTint="#676666"
+            android:text="3"
+            android:textColor="#FFFFFF"
+            android:textSize="48sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp">
+
+        <Button
+            android:id="@+id/dauB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/sum"
+            android:backgroundTint="#676666"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+            android:backgroundTint="#676666"
+            android:text="+"
+            android:textColor="#F6F6F6"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/so0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@id/soP"
+            android:backgroundTint="#676666"
+            android:text="0"
+            android:textColor="#F4F4F4"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/soP"
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:backgroundTint="#676666"
+            android:text="."
+            android:textColor="#FAEDED"
+            android:textSize="48sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

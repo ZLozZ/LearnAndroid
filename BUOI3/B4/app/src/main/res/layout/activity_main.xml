@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00E5FF"
+        android:text="Đăng nhập hệ thống"
+        android:textAlignment="center">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="6"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:layout_width="0dp"
+            android:text="User:"
+            android:textSize="16dp">
+        </TextView>
+
+        <EditText
+            android:id="@+id/editUser"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content">
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="6"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:layout_width="0dp"
+            android:text="Password:"
+            android:textSize="16dp">
+        </TextView>
+
+        <EditText
+            android:id="@+id/editPass"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:password="true">
+        </EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="6"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:layout_width="0dp"
+            android:textSize="16dp">
+        </TextView>
+
+        <CheckBox
+            android:id="@+id/cbSave"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:text="Lưu thông tin"
+            android:layout_height="wrap_content">
+        </CheckBox>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="6"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:layout_width="0dp"
+            android:textSize="16dp">
+        </TextView>
+
+        <Button
+            android:id="@+id/btnAccess"
+            android:text="Đăng nhập"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content">
+        </Button>
+    </LinearLayout>
+</LinearLayout>

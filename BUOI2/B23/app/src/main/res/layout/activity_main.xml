@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#037028"
+        android:text="Quản lý công việc tuần"
+        android:textAlignment="center"
+        android:textColor="@color/white"></TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:text="Công việc: "></TextView>
+
+        <EditText
+            android:id="@+id/edtCv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:text="Nội dung: ">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edtNd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:text="Ngày HT:  ">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="229dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#E40707"></TextView>
+        <Button
+            android:id="@+id/btnDate"
+            android:textAllCaps="false"
+            android:text="Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:text="Giờ HT:  ">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textTime"
+            android:layout_width="229dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text=""
+            android:textColor="#E40707"></TextView>
+        <Button
+            android:id="@+id/btnTime"
+            android:textAllCaps="false"
+            android:text="Time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Button>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:text="Thêm CV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#037028"
+        android:text="Danh sách công việc"
+        android:textColor="@color/white">
+    </TextView>
+    <ListView
+        android:id="@+id/listCv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+</LinearLayout>

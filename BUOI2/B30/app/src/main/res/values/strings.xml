@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Multi Language</string>
+    <string name="strUserName">User name</string>
+    <string name="strHintName">User is here</string>
+    <string name="strHintPass">Pass is here</string>
+    <string name="strPass">Password</string>
+    <string name="strbutton">Login</string>
+</resources>
