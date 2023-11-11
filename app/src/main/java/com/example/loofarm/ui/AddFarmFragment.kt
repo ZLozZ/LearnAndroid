@@ -16,6 +16,8 @@ import com.example.loofarm.databinding.FragmentAddFarmBinding
 import com.example.loofarm.model.Device
 import com.example.loofarm.model.Farm
 import com.example.loofarm.model.ManagerUser
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import java.util.Date
 
 // TODO: Rename parameter arguments, choose names that match
@@ -137,7 +139,9 @@ class AddFarmFragment : Fragment() {
             transaction.replace(R.id.frLayout, targetFragment)
             transaction.addToBackStack(null)
             transaction.commit()
-            Toast.makeText(requireContext(),"${ManagerUser.getFarm(0)}", Toast.LENGTH_LONG).show()
+            var databaseReference = Firebase.database.reference
+            val users = ManagerUser.getUser()
+            databaseReference.child(ManagerUser.getId().toString()).setValue(users)
         }
 
         binding.btnExitFarm.setOnClickListener{

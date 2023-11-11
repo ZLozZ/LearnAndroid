@@ -84,8 +84,45 @@ class LoginFragment : Fragment() {
     private fun updateUI(account: GoogleSignInAccount) {
         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
         ManagerUser.setId(account.id.toString())
+        ManagerUser.setMail(account.email.toString())
         auth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
+                var ds:MutableList<String> = mutableListOf()
+
+                databaseReference = FirebaseDatabase.getInstance().getReference(account.id.toString()+"/id")
+                databaseReference.addValueEventListener(object : ValueEventListener{
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        ds.clear()
+                        if(snapshot.exists()){
+//                            for(empSnap in snapshot.children){
+//                                ds.add(empSnap.getValue(String::class.java).toString())
+//                                Toast.makeText(requireContext(), "$ds", Toast.LENGTH_SHORT).show()
+//
+//                            }
+                        }
+
+                        Toast.makeText(requireContext(), "$ds", Toast.LENGTH_SHORT).show()
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+
+                    }
+                })
+
+//                val databaseReference = FirebaseDatabase.getInstance().reference
+//                val userId = "5"
+//
+//                databaseReference.child(account.id.toString()).child(userId).child("id")
+//                    .get()
+//                    .addOnSuccessListener { dataSnapshot ->
+//                        val displayName = dataSnapshot.value as? String
+//                        Toast.makeText(requireContext(), "$displayName", Toast.LENGTH_LONG).show()
+//                    }
+//                    .addOnFailureListener { e ->
+//                        Toast.makeText(requireContext(), "Error getting data: ${e.message}", Toast.LENGTH_LONG).show()
+//                    }
+
+
                 // Tạo Fragment mục tiêu
                 val targetFragment = HomeFragment()
                 // Thực hiện transaction để chuyển đổi Fragment
@@ -100,8 +137,7 @@ class LoginFragment : Fragment() {
                 transaction.addToBackStack(null)
                 transaction.commit()
 
-
-//                Toast.makeText(requireActivity(), "thad", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireActivity(), "thad", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this.context, "Not Internet", Toast.LENGTH_LONG).show()
 

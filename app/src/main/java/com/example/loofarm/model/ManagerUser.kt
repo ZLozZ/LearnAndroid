@@ -9,6 +9,9 @@ object ManagerUser {
         user = User(id = "", email = "", userName = "", farms = mutableListOf())
     }
 
+    fun setMail(email: String){
+        user.email = email
+    }
     fun setName(name:String){
         user.userName = name
     }

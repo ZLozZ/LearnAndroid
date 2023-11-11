@@ -6,10 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.loofarm.R
 import com.example.loofarm.databinding.FragmentUpdateInforUserBinding
 import com.example.loofarm.model.ManagerUser
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -54,6 +57,9 @@ class UpdateInforUserFragment : Fragment() {
             transaction.replace(R.id.frLayout, targetFragment)
             transaction.addToBackStack(null)
             transaction.commit()
+            var databaseReference = Firebase.database.reference
+            val users = ManagerUser.getUser()
+            databaseReference.child(ManagerUser.getId().toString()).setValue(users)
         }
 
         binding.btnExitInfor.setOnClickListener{

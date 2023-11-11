@@ -12,6 +12,8 @@ import com.example.loofarm.R
 import com.example.loofarm.databinding.FragmentMainInterfaceBinding
 import com.example.loofarm.model.ManagerUser
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class HomeFragment : Fragment() {
 
